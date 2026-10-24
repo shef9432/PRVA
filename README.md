@@ -7,15 +7,10 @@
 [![Standard](https://img.shields.io/badge/Standard-Industrial%20ODD-orange.svg)]()
 [![Focus](https://img.shields.io/badge/Focus-AI%20Robustness-gold.svg)]()
 [![License](https://img.shields.io/badge/License-Apache%202.0-lightgrey.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Industry](https://img.shields.io/badge/Industry-Automotive%20OEM-red.svg)]()
-[![Medical](https://img.shields.io/badge/Medical-Diagnostic%20AI-success.svg)]()
 [![Autonomous](https://img.shields.io/badge/Autonomous-Drive%20ODD-blueviolet.svg)]()
 [![SmartMfg](https://img.shields.io/badge/Smart%20Mfg-Industry%204.0-critical.svg)]()
-[![Status](https://img.shields.io/badge/Status-Production--Proven-blue.svg)]()
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python](https://img.shields.io/badge/Python-3.8+-green.svg)]()
-[![Status](https://img.shields.io/badge/Status-Production--Proven-brightgreen.svg)]()
 
 ---
 
@@ -53,10 +48,9 @@ PVA is an **Industrial AI Reliability Assurance System**. We believe that in mis
 
 ```python
 from PV_audit import PhysCorruptor, Auditor
-```
 
 # 1. Initialize the audit engine
-config = {"lux": 0.5, "motion_blur": 3} 
+config = {"lux": 0.5, "motion_blur": 3}
 corruptor = PhysCorruptor(input_data)
 auditor = Auditor(model)
 
@@ -66,30 +60,31 @@ report = auditor.evaluate(degraded_data)
 
 # 3. Analyze the Safe Operating Area (SOA)
 report.show_soa_map()
-🗺️ Roadmap: The Evolution of Industrial Reliability
-Phase 1: Physical Audit (The Present)
-Infrastructure: Established PhysCorruptor and Audit Logger.
+```
 
-Focus: Quantifying the Safe Operating Area (SOA) under basic optical and environmental stressors.
+---
 
-Phase 2: Parametric Engineering (In Progress)
-Golden Reference Mapping: Integrating high-fidelity "Golden Reference" data to map the optimal synergy between hardware and algorithmic parameters.
+## 🗺️ Roadmap: The Evolution of Industrial Reliability
 
-Degradation Engines: Developing physically consistent degradation models to simulate complex material distortions and optical reflections.
+### Phase 1: Physical Audit (The Present)
+- **Infrastructure:** Established PhysCorruptor and Audit Logger.
+- **Focus:** Quantifying the Safe Operating Area (SOA) under basic optical and environmental stressors.
 
-Phase 3: Cognitive Defense & Safety (Future)
-Adversarial Closed-loop: Implementation of "Anti-Fact" data injection to detect model hallucinations.
+### Phase 2: Parametric Engineering (In Progress)
+- **Golden Reference Mapping:** Integrating high-fidelity "Golden Reference" data to map the optimal synergy between hardware and algorithmic parameters.
+- **Degradation Engines:** Developing physically consistent degradation models to simulate complex material distortions and optical reflections.
 
-Re-calibration Engine: Enabling automatic model rollbacks or re-calibration when the system enters a "Logic Wasteland" (i.e., non-physical confident predictions).
+### Phase 3: Cognitive Defense & Safety (Future)
+- **Adversarial Closed-loop:** Implementation of "Anti-Fact" data injection to detect model hallucinations.
+- **Re-calibration Engine:** Enabling automatic model rollbacks or re-calibration when the system enters a "Logic Wasteland" (i.e., non-physical confident predictions).
+- **Cross-Domain Expansion:**
+  - Control-PV: Assessing stability against network jitter and mechanical backlash.
+  - Language-PV / Medical-PV: Extending robustness auditing to acoustic and bio-signal domains.
 
-Cross-Domain Expansion: * Control-PV: Assessing stability against network jitter and mechanical backlash.
+---
 
-Language-PV/Medical-PV: Extending robustness auditing to acoustic and bio-signal domains.
-
-💬 Feedback & Inquiries
+## 💬 Feedback & Inquiries
 PVA is an independent technical initiative aimed at making industrial AI predictable. Contributions, technical discussions, or inquiries regarding specific industrial use cases are highly welcome.
-
-Author: shef9432 | LinkedIn
 
 ### 📜 License & Disclaimer
 - **License:** This project is licensed under the [Apache 2.0](LICENSE) License.
