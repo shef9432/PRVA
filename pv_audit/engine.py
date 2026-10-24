@@ -6,6 +6,7 @@ class AuditEngine:
         self.adapter = adapter
         self.operators = {
             "Lux+": StressSimulator.apply_lux_plus,
+            "Lux-": StressSimulator.apply_lux_minus,
             "MBlur": StressSimulator.apply_mblur,
             "ISO": StressSimulator.apply_iso_noise,
             "DPI": StressSimulator.apply_dpi,

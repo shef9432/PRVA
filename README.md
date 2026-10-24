@@ -35,8 +35,8 @@ PVA is an **Industrial AI Reliability Assurance System**. We believe that in mis
 
 | Physical Factor | Key (`dims`) | Industrial Context | Implementation Logic |
 | :--- | :--- | :--- | :--- |
-| **Lux** | `Lux+` | Environmental light fluctuation | Linear scaling & Gamma adjustment |
-| **Motion Blur** | `MBlur` | Conveyor/Mechanical vibration | Directional convolution kernels |
+| **Lux** | `Lux+` / `Lux-` | Environmental light fluctuation | Linear scaling & Gamma adjustment (`Lux+`: gain 1 + level/50, gamma 1/(1 + level/100); `Lux-`: gain 1/(1 + level/50), gamma 1 + level/100) |
+| **Motion Blur** | `MBlur` | Conveyor/Mechanical vibration | Directional convolution kernels (line of int(level/10)·2+1 px, horizontal by default; `apply_mblur(img, level, angle=…)` for other directions) |
 | **DPI/Res** | `DPI` | Working distance variations | Area-based resampling (down to (100 − level)% per side, then back to full size) |
 | **Defocus** | `Defocus` | Focal drift | Gaussian-based degradation (sigma = level / 10 px) |
 | **ISO Noise** | `ISO` | Low-light sensor gain | Gaussian-Normal injection |
@@ -69,8 +69,8 @@ class MyModel(BaseAdapter):
 image = cv2.imread("sample.jpg")
 agent = AuditAgent(MyModel())
 
-# Stress dimensions: "Lux+", "MBlur", "DPI", "Defocus", "ISO" (see Assessment Dimensions)
-report = agent.run(image, dims=["Lux+", "MBlur", "DPI", "Defocus", "ISO"], lvls=[0, 20, 40, 60])
+# Stress dimensions: "Lux+", "Lux-", "MBlur", "DPI", "Defocus", "ISO" (see Assessment Dimensions)
+report = agent.run(image, dims=["Lux+", "Lux-", "MBlur", "DPI", "Defocus", "ISO"], lvls=[0, 20, 40, 60])
 
 report.to_csv("audit.csv")       # dimension, level, conf
 report.plot_trend("audit.png")   # confidence vs. stress level, one line per dimension
