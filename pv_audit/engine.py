@@ -7,7 +7,9 @@ class AuditEngine:
         self.operators = {
             "Lux+": StressSimulator.apply_lux_plus,
             "MBlur": StressSimulator.apply_mblur,
-            "ISO": StressSimulator.apply_iso_noise
+            "ISO": StressSimulator.apply_iso_noise,
+            "DPI": StressSimulator.apply_dpi,
+            "Defocus": StressSimulator.apply_defocus
         }
 
     def run_audit(self, image: np.ndarray, dims: list, lvls: list) -> list:
