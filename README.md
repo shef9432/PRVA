@@ -7,7 +7,6 @@
 [![Standard](https://img.shields.io/badge/Standard-Industrial%20ODD-orange.svg)]()
 [![Focus](https://img.shields.io/badge/Focus-AI%20Robustness-gold.svg)]()
 [![License](https://img.shields.io/badge/License-Apache%202.0-lightgrey.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Autonomous](https://img.shields.io/badge/Autonomous-Drive%20ODD-blueviolet.svg)]()
 [![SmartMfg](https://img.shields.io/badge/Smart%20Mfg-Industry%204.0-critical.svg)]()
 
 [![Python](https://img.shields.io/badge/Python-3.8+-green.svg)]()
@@ -46,20 +45,35 @@ PVA is an **Industrial AI Reliability Assurance System**. We believe that in mis
 
 ## 🚀 Quick Start
 
+```bash
+git clone https://github.com/shef9432/PV_audit.git
+cd PV_audit
+pip install -e .
+```
+
+Wrap your model in an adapter (one method), then run the audit:
+
 ```python
-from PV_audit import PhysCorruptor, Auditor
+import cv2
+from pv_audit import AuditAgent, BaseAdapter
 
-# 1. Initialize the audit engine
-config = {"lux": 0.5, "motion_blur": 3}
-corruptor = PhysCorruptor(input_data)
-auditor = Auditor(model)
 
-# 2. Execute black-box auditing
-degraded_data = corruptor.apply(config)
-report = auditor.evaluate(degraded_data)
+class MyModel(BaseAdapter):
+    def predict(self, image):
+        # Run your own model here (YOLO, ResNet, ...).
+        # Return its raw output and one confidence score for this image.
+        result = ...  # your inference
+        return {"data": result, "conf": 0.9}
 
-# 3. Analyze the Safe Operating Area (SOA)
-report.show_soa_map()
+
+image = cv2.imread("sample.jpg")
+agent = AuditAgent(MyModel())
+
+# Stress dimensions: "Lux+" (brightness), "MBlur" (blur), "ISO" (sensor noise)
+report = agent.run(image, dims=["Lux+", "MBlur", "ISO"], lvls=[0, 20, 40, 60])
+
+report.to_csv("audit.csv")       # dimension, level, conf
+report.plot_trend("audit.png")   # confidence vs. stress level, one line per dimension
 ```
 
 ---
