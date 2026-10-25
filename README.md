@@ -1,4 +1,4 @@
-# PVA (Physical Validator Audit) 🛡️
+# PRVA (Physical-reality Validation & Assessment) 🛡️
 
 **Quantifying the Operational Design Domain (ODD) for Industrial AI.**
 
@@ -14,10 +14,10 @@
 ---
 
 ## 🚩 About
-In industrial deployment, AI model performance is often fragile against physical environmental fluctuations. **PVA (Physical Validator Audit)** is a decoupled evaluation framework designed to quantify the performance boundaries of vision models under varying physical stresses.
+In industrial deployment, AI model performance is often fragile against physical environmental fluctuations. **PRVA (Physical-reality Validation & Assessment)** is an open validation and evaluation method / framework designed to quantify the performance boundaries of vision models under varying physical stresses.
 
 **The Core Philosophy:**
-PVA is an **Industrial AI Reliability Assurance System**. We believe that in mission-critical manufacturing, the training process is only the beginning—the **Reliability Loop** is what truly defines production readiness. 
+PRVA is an **open method for validating and assessing industrial AI reliability**. We believe that in mission-critical manufacturing, the training process is only the beginning—the **Reliability Loop** is what truly defines production readiness. 
 
 
 
@@ -43,11 +43,13 @@ PVA is an **Industrial AI Reliability Assurance System**. We believe that in mis
 
 ---
 
+> Formerly *PVA (Physical Validator Audit)*. The Python package is still imported as `pv_audit`.
+
 ## 🚀 Quick Start
 
 ```bash
-git clone https://github.com/shef9432/PV_audit.git
-cd PV_audit
+git clone https://github.com/shef9432/PRVA.git
+cd PRVA
 pip install -e .
 ```
 
@@ -100,7 +102,7 @@ Run the tests: `python -m unittest discover -s tests`
 ---
 
 ## 💬 Feedback & Inquiries
-PVA is an independent technical initiative aimed at making industrial AI predictable. Contributions, technical discussions, or inquiries regarding specific industrial use cases are highly welcome.
+PRVA is an independent technical initiative aimed at making industrial AI predictable. Contributions, technical discussions, or inquiries regarding specific industrial use cases are highly welcome.
 
 ### 📜 License & Disclaimer
 - **License:** This project is licensed under the [Apache 2.0](LICENSE) License.
