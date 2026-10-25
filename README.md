@@ -23,6 +23,16 @@ PRVA is an **open method for validating and assessing industrial AI reliability*
 
 ---
 
+## 📌 What PRVA is — and is not
+PRVA organises existing ideas into one practical method: the **Operational Design Domain (ODD)** — the conditions a
+system is designed to work in —, **SOTIF (ISO 21448, Safety Of The Intended Functionality)** — hazards that come from
+the limits of perception rather than from faults —, and **robustness evaluation** of vision models under controlled
+degradations. It helps you measure and document where a model stays reliable.
+**PRVA is not a standard, not a certification, and not a substitute for functional-safety work** (e.g. ISO 26262,
+IEC 61508, ISO 13849). Results describe the tested model under the tested conditions only.
+
+---
+
 ## 🏗️ Core Modules
 - **PhysCorruptor:** A simulation engine that injects controlled physical variables (Lux, DPI, Motion Blur, Defocus, ISO Noise) into raw samples to stress-test model robustness.
 - **Audit Logger:** Outputs standardized performance metrics (CSV/JSON) for deep-dive production auditing.
