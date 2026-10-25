@@ -1,4 +1,4 @@
-# PRVA (Physical-reality Validation & Assessment) 🛡️
+# PRVA (Physical Reality Validation & Assessment) 🛡️
 
 **Quantifying the Operational Design Domain (ODD) for Industrial AI.**
 
@@ -14,7 +14,7 @@
 ---
 
 ## 🚩 About
-In industrial deployment, AI model performance is often fragile against physical environmental fluctuations. **PRVA (Physical-reality Validation & Assessment)** is an open validation and evaluation method / framework designed to quantify the performance boundaries of vision models under varying physical stresses.
+In industrial deployment, AI model performance is often fragile against physical environmental fluctuations. **PRVA (Physical Reality Validation & Assessment)** is an open validation and evaluation method / framework designed to quantify the performance boundaries of vision models under varying physical stresses.
 
 **The Core Philosophy:**
 PRVA is an **open method for validating and assessing industrial AI reliability**. We believe that in mission-critical manufacturing, the training process is only the beginning—the **Reliability Loop** is what truly defines production readiness. 
